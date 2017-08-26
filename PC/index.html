@@ -1,0 +1,181 @@
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="author" content="苏明星">
+		<title>天气预报</title>
+		<script src="../jquery-1.4.4.min.js"></script>
+		<script src="../jquery.cookie.js"></script>
+		<script src="../js/getWeatherInfo.js"></script>
+		<link rel="stylesheet" href="css/animate.min.css" />
+		<link rel="stylesheet" href="css/buttons.css" />
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<script src="../js/Chart.js"></script>
+		<link rel="stylesheet" href="css/PC.css" />
+	</head>
+
+	<body>
+		<img src="days/waiting.jpg" alt="" id="bg" height="100%">
+		<main>
+			<section>
+				<div id="weizhi">
+					<section>
+						<div id="currentCity">获取中</div>
+						<div id="week">
+							2016年7月12日 星期二<br> &nbsp;&nbsp;当前天气实况
+						</div>
+						<div>
+
+						</div>
+					</section>
+				</div>
+				<div id="weather">
+					<section>
+						<img src="" alt="获取中" id="day0">
+					</section>
+					<section>
+						<p id="todayw">获取中</p>
+						<p id="nowt">获取中</p>
+						<p id="wind">获取中</p>
+					</section>
+					<section>
+						<p id="todayTemp">今 天 天 气 ：获取中</p>
+						<p id="todatPM25">PM2.5 : 获取中</p>
+						<p id="AQI">空 气 质 量 : 获取中</p>
+					</section>
+				</div>
+				<div>
+
+				</div>
+			</section>
+			<section id="city">
+				<div>全国主要城市天气</div>
+				<div class="cityGroup">
+					<section onclick="changeCity('北京市')">北京</section>
+					<section onclick="changeCity('哈尔滨')">哈尔滨</section>
+					<section onclick="changeCity('长春市')">长春</section>
+					<section onclick="changeCity('沈阳市')">沈阳</section>
+					<section onclick="changeCity('天津市')">天津</section>
+					<section onclick="changeCity('上海市')">上海</section>
+					<section onclick="changeCity('广州市')">广州</section>
+					<section onclick="changeCity('深圳市')">深圳</section>
+					<section onclick="changeCity('厦门市')">厦门</section>
+					<section onclick="changeCity('杭州市')">杭州</section>
+					<section onclick="changeCity('重庆市')">重庆</section>
+					<section onclick="changeCity('成都市')">成都</section>
+					<section onclick="changeCity('武汉市')">武汉</section>
+					<section onclick="changeCity('济南市')">济南</section>
+					<section onclick="changeCity('福州市')">福州</section>
+					<section onclick="changeCity('青岛市')">青岛</section>
+					<section onclick="changeCity('大连市')">大连</section>
+					<section onclick="changeCity('郑州市')">郑州</section>
+					<section onclick="changeCity('西安市')">西安</section>
+					<section onclick="changeCity('苏州市')">苏州</section>
+				</div>
+				<div>
+					<input type="text" placeholder="输入城市以搜索" id="searchCity">
+					<button class="button button-pill" onclick="search()">搜索</button>
+				</div>
+			</section>
+		</main>
+		<footer>
+			<section id="day1">
+				<div class="one">获取中</div>
+				<div class="two"><img src="" alt="获取中"></div>
+				<div class="three">获取中</div>
+				<div class="four">获取中</div>
+				<div class="five">获取中</div>
+			</section>
+			<section id="day2">
+				<div class="one">获取中</div>
+				<div class="two"><img src="" alt="获取中"></div>
+				<div class="three">获取中</div>
+				<div class="four">获取中</div>
+				<div class="five">获取中</div>
+			</section>
+			<section id="day3">
+				<div class="one">获取中</div>
+				<div class="two"><img src="days/duoyun.png" alt="获取中"></div>
+				<div class="three">获取中</div>
+				<div class="four">获取中</div>
+				<div class="five">获取中</div>
+			</section>
+		</footer>
+		<div class="devide"></div>
+		<div class="container">
+			<h3>| 趋势早知道</h3>
+			<span class="temptips">Tips:棕色代表最高气温 蓝色代表最低气温</span>
+			<div class="col-lg-12 col-md-12 col-sm-12" id="qs">
+				<canvas id="myChart"></canvas>
+			</div>
+		</div>
+		<div class="devide"></div>
+		<div class="container">
+			<h3>| 生活指数</h3>
+			</row><div class="col-lg-4 col-md-4 col-sm-6" id="zs1">
+				<img src="image/cy.png" alt="">
+				<p>穿衣指数:获取中</p>
+				<p>获取中</p>
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-6" id="zs2">
+				<img src="image/xc.png" alt="">
+				<p>洗车指数:获取中</p>
+				<p>获取中</p>
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-6" id="zs6">
+				<img src="image/hc.png" alt="">
+				<p>旅游指数:一般</p>
+				<p>稍热，微风，旅游指数一般，外出请尽量避开降雨时间，若外出，请注意防雷并携带雨具。</p>
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-6" id="zs4">
+				<img src="image/yd.png" alt="">
+				<p>运动指数:获取中</p>
+				<p>获取中</p>
+			</div>
+			<div class="clearfix visible-sm-block"></div>
+			<div class="col-lg-4 col-md-4 col-sm-6" id="zs5">
+				<img src="image/fs.png" alt="">
+				<p>紫外线强度:获取中</p>
+				<p>获取中</p>
+			</div>
+
+			<div class="col-lg-4 col-md-4 col-sm-6" id="zs3">
+				<img src="image/gm.png" alt="">
+				<p>感冒指数:获取中</p>
+				<p>获取中</p>
+			</div>
+
+		</div>
+		<div class="devide"></div>
+		<!--<hr>-->
+		<div class="container">
+			<h3>| 生活小贴士</h3>
+			<img src="image/1.jpg" alt="" id="img">
+			<div class="col-lg-7 col-md-7 col-sm-6 col-xs-12" id="know">
+			 <p>&nbsp;&nbsp;人离开食物可以活七天，而离开水只可以活三天，水是生命之源，世间万物都离不开水，喝水成为我们每个人每天必须做的事情，由此可以看出来水对于我们来说的重要性，可是你知道吗？其实每个人每天喝水的时间也是有讲究的。</p>
+				<p>第一杯水：上午八点钟</p>
+				<p>第二杯水：上午九点钟</p>
+				<p>第三杯水：中午十一点半</p>
+				<p>第四杯水：下午一点半</p>
+				<p>第五杯水：下午三点半</p>
+				<p>第六杯水：下午五点半</p>
+				<p>第七杯水：傍晚七点钟</p>
+				<p>第八杯水：晚上八点十五分</p>
+			</div>
+		</div>
+		<div class="devide"></div>
+		<div class="container">
+			<h3>| 天气小视频</h3>
+			<span class="temptips">Tips:1分钟带你了解什么是雾霾</span>
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="video">
+				
+					<video controls="controls" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<source src="video/一分钟让你了解雾霾 12_超清_高清.mp4"></source>
+				  </video>
+			</div>
+		</div>
+		<div class="devide"></div>
+	</body>
+	<script src="js/PC.js"></script>
+
+</html>

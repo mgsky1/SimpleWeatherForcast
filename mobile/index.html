@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>天气预报</title>
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<script src="js/jquery.min.js"></script>
+		<script src="../jquery.cookie.js"></script>
+		<script src="../js/getWeatherInfo.js"></script>
+		<script src="../js/Chart.js"></script>
+		<link rel="stylesheet" href="css/buttons.css" />
+		<link rel="stylesheet" href="css/mobile.css" />
+	</head>
+
+	<body>
+		<header id="head">
+			<!--<img src="image/map.png" alt="" width="20px" height="20px">-->
+			<span id="ci">获取中</span>
+			<h1 id="h1">获取中</h1>
+			<p id="todayw">获取中</p>
+			<p id="wind">获取中</p>
+			<p id="todayTemp">获取中</p>
+			<p id="week">获取中</p>
+			<p style="padding-bottom:25px;" id="todatPM25">获取中</p>
+		</header>
+		<div class="devide"></div>
+		<div class="container">
+			<h3>| 城市万花筒</h3>
+			<input type="text" id="inputCity" class="form-control" />
+			<br />
+			<button class="button button-pill" id="search" onclick="search()">搜索</button>
+			<br />
+		</div>
+		<div class="devide"></div>
+		<div class="container" id="main">
+			<h3>| 天气知冷暖</h3>
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"><span id="day0">获取中</span><img src="image/cloudy.png" alt="" id="tu0"></div>
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"><span id="day1">获取中</span><img src="image/cloudy.png" alt="" id="tu1"></div>
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"><span id="day2">获取中</span><img src="image/cloudy.png" alt="" id="tu2"></div>
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6"><span id="day3">获取中</span><img src="image/cloudy.png" alt="" id="tu3"></div>
+		</div>
+		<div class="devide"></div>
+		<div class="container">
+			<h3>| 趋势早知道</h3>
+			<span class="temptips">Tips:棕色代表最高气温 蓝色代表最低气温</span>
+			<div class="col-lg-12 col-md-12 col-sm-12" id="qs">
+				<canvas id="myChart"></canvas>
+			</div>
+		</div>
+		<div class="devide"></div>
+		<div class="container">
+			<h3>| 生活指数</h3>
+			<div class="col-lg-4 col-md-4 col-sm-6" id="zs1">
+				<img src="image/cy.png" alt="">
+				<p>穿衣指数:获取中</p>
+				<p>获取中</p>
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-6" id="zs2">
+				<img src="image/xc.png" alt="">
+				<p>洗车指数:获取中</p>
+				<p>获取中</p>
+			</div>
+			<div class="clearfix visible-sm-block"></div>
+			<div class="col-lg-4 col-md-4 col-sm-6" id="zs6">
+				<img src="image/hc.png" alt="">
+				<p>旅游指数:一般</p>
+				<p>稍热，微风，旅游指数一般，外出请尽量避开降雨时间，若外出，请注意防雷并携带雨具。</p>
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-6" id="zs4">
+				<img src="image/yd.png" alt="">
+				<p>运动指数:获取中</p>
+				<p>获取中</p>
+			</div>
+			<div class="clearfix visible-sm-block"></div>
+			<div class="col-lg-4 col-md-4 col-sm-6" id="zs5">
+				<img src="image/fs.png" alt="">
+				<p>紫外线强度:获取中</p>
+				<p>获取中</p>
+			</div>
+
+			<div class="col-lg-4 col-md-4 col-sm-6" id="zs3">
+				<img src="image/gm.png" alt="">
+				<p>感冒指数:获取中</p>
+				<p>获取中</p>
+			</div>
+
+		</div>
+		<div class="devide"></div>
+		<!--<hr>-->
+		<div class="container">
+			<h3>| 生活小贴士</h3>
+			<img src="image/1.jpg" alt="" id="img">
+			<div class="col-lg-7 col-md-7 col-sm-6 col-xs-12" id="know">
+				<p>&#x300;&#x3000;人离开食物可以活七天，而离开水只可以活三天，水是生命之源，世间万物都离不开水，喝水成为我们每个人每天必须做的事情，由此可以看出来水对于我们来说的重要性，可是你知道吗？其实每个人每天喝水的时间也是有讲究的。</p>
+				<p>第一杯水：上午八点钟</p>
+				<p>第二杯水：上午九点钟</p>
+				<p>第三杯水：中午十一点半</p>
+				<p>第四杯水：下午一点半</p>
+				<p>第五杯水：下午三点半</p>
+				<p>第六杯水：下午五点半</p>
+				<p>第七杯水：傍晚七点钟</p>
+				<p>第八杯水：晚上八点十五分</p>
+
+			</div>
+		</div>
+		<div class="devide"></div>
+		<div class="container">
+			<h3>| 天气小视频</h3>
+			<span class="temptips">Tips:1分钟带你了什么是解雾霾</span>
+			<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="video">
+
+				<video controls="controls" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+					<source src="../PC/video/一分钟让你了解雾霾 12_超清_高清.mp4"></source>
+				</video>
+			</div>
+		</div>
+		<div class="devide"></div>
+
+		<script src="js/bootstrap.min.js"></script>
+        <script src="js/mobile.js"></script>
+	</body>
+
+</html>

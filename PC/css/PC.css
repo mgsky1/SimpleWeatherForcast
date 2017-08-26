@@ -1,0 +1,386 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	width: 100%;
+}
+
+#bg {
+	filter: blur(5px);
+	-webkit-filter: blur(5px);
+	-moz-filter: blur(5px);
+	-ms-filter: blur(5px);
+	-o-filter: blur(5px);
+	width: 100%;
+	/*height: 100%;*/
+}
+
+main {
+	display: flex;
+	width: 100%;
+	height: 65%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	/*border: 1px solid red; */
+}
+
+main section {
+	color: white;
+	width: 50%;
+	height: 100%;
+	/*border: 1px solid red;              */
+}
+
+main section:nth-of-type(1) #weizhi {
+	width: 100%;
+	height: 30%;
+	/*border: 1px solid red;*/
+}
+
+main section:nth-of-type(1) #weather {
+	width: 100%;
+	height: 30%;
+	/*border: 1px solid red;*/
+}
+
+main section:nth-of-type(1) div:nth-of-type(3) {
+	width: 100%;
+	height: 40%;
+	/*border: 1px solid red;*/
+}
+
+#weizhi section {
+	position: relative;
+	border: none;
+	width: 100%;
+	height: 33.3%;
+	top: calc(50% - 15.75%);
+	color: white;
+	display: flex;
+}
+
+#weizhi section div {
+	border: none;
+	height: 100%;
+}
+
+#weizhi section div:nth-of-type(1) {
+	width: 35%;
+	text-align: right;
+	font-size: 45px;
+	padding: 5px 5px 0 0;
+	white-space: nowrap;
+	border-right: 1px solid white;
+}
+
+#weizhi section div:nth-of-type(2) {
+	width: 35%;
+	line-height: 2.3rem;
+	font-size: 13px;
+	padding-left: 5px;
+	white-space: nowrap;
+}
+
+#weizhi section div:nth-of-type(3) {
+	width: 30%;
+}
+
+#weather {
+	display: flex;
+	color: white;
+	font-size: 20px;
+}
+
+#weather section {
+	height: 100%;
+	border: none;
+	line-height: 1rem;
+	white-space: nowrap;
+}
+
+#weather section:nth-of-type(1) {
+	width: 32%;
+	text-align: right;
+	padding-top: 15px;
+	padding-right: 0px;
+}
+
+#weather section:nth-of-type(2) {
+	width: 15%;
+	padding-top: 15px;
+	border-right: 1px solid white;
+}
+
+#weather section:nth-of-type(3) {
+	width: 53%;
+	padding-top: 15px;
+	padding-left: 10px;
+}
+
+main section:nth-of-type(2) div:nth-of-type(1) {
+	width: 100%;
+	height: 10%;
+	text-align: center;
+	font-size: 22px;
+	padding-top: 25px;
+	padding-right: 150px;
+	/*border: 1px solid red;*/
+}
+
+main section:nth-of-type(2) div:nth-of-type(2) {
+	width: 100%;
+	height: 80%;
+	/*border: 1px solid red;*/
+}
+
+main section:nth-of-type(2) div:nth-of-type(3) {
+	width: 100%;
+	height: 10%;
+	/*border: 1px solid red;*/
+}
+
+#city div:nth-of-type(2) {
+	display: flex;
+	flex-flow: wrap;
+}
+
+#city div:nth-of-type(2) section {
+	width: 8.5vw;
+	height: 4vw;
+	/*background-color: darkgray;*/
+	background-color: rgba(255, 255, 255, 0.5);
+	color: #436467;
+	margin: 10px 0 0 30px;
+	text-align: center;
+	padding-top: 3.8%;
+	font-size: 25px;
+}
+
+#city div:nth-of-type(2) section:hover {
+	cursor: pointer;
+}
+
+#city div:nth-of-type(3) {
+	padding-top: 10px;
+}
+
+input[type=text] {
+	width: 30%;
+	height: 80%;
+	margin-left: 30px;
+	/*background-color: lightgray;*/
+	background-color: rgba(255, 255, 255, 0.5);
+	font-size: 20px;
+	padding: 5px;
+}
+
+footer {
+	width: 100%;
+	height: 35%;
+	color: white;
+	font-size: 19px;
+	display: flex;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+footer section {
+	width: 33.33333%;
+	height: 100%;
+	text-align: center;
+	padding: 30px 0 0 0;
+	/*border: 1px solid red;*/
+}
+
+footer section img {
+	height: 60px;
+	margin: 5px auto;
+}
+
+.three,
+.four,
+.five {
+	font-size: 15px;
+	line-height: 1.8rem;
+}
+
+@media (max-width: 1700px) {
+	#weizhi section {
+		height: 7vw;
+	}
+	#weizhi section div:nth-of-type(1) {
+		font-size: 3vw;
+		padding: 5px 5px 0 0;
+	}
+	#weizhi section div:nth-of-type(2) {
+		line-height: 2.2vw;
+		font-size: 1.3vw;
+	}
+	#weather {
+		font-size: 1.3vw;
+		margin-top: 2.5vw;
+	}
+	#weather section {
+		line-height: 1vw;
+		height: 10vw;
+	}
+	#weather section:nth-of-type(1) {
+		padding-top: 2vw;
+		padding-right: 2px;
+		padding-bottom: 9vw;
+	}
+	#weather section:nth-of-type(1) img {
+		width: 8vw;
+		height: 11vw;
+		padding-bottom: 3.5vw;
+	}
+	#weather section:nth-of-type(2) {
+		padding-top: 15px;
+		padding-right: 10vw;
+		padding-bottom: 9vw;
+	}
+	#weather section:nth-of-type(3) {
+		padding-top: 15px;
+		padding-left: 10px;
+		padding-bottom: 9vw;
+	}
+	#city div:nth-of-type(1) {
+		font-size: 1.6vw;
+		padding-top: 1vw;
+		padding-right: 5vw;
+	}
+	#city div:nth-of-type(2) section {
+		width: 8vw;
+		height: 4.5vw;
+		margin: 0.5vw 0 -0 1vw;
+		padding: 1.5vw auto;
+		font-size: 1.7vw;
+	}
+	#city div:nth-of-type(3) {
+		padding-top: 1.2vw;
+	}
+	input[type=text] {
+		width: 16vw;
+		height: 2.5vw;
+		margin-left: 1vw;
+		font-size: 0.9vw;
+		padding: 0.2vw;
+	}
+	footer img {
+		width: 5vw;
+		height: 7vw;
+	}
+	footer section img {
+		margin: 1vw auto 0.5vw auto;
+	}
+	footer {
+		font-size: 1.3vw;
+	}
+	.three,
+	.four,
+	.five {
+		font-size: 1vw;
+		line-height: 2vw;
+	}
+}
+
+@media (max-width: 1500px) {
+	#city div:nth-of-type(2) section {
+		width: 9vw;
+		height: 4.2vw;
+		margin: 0.5vw 1vw -5vw 1vw;
+		padding: 1.3vw auto;
+	}
+	#city div:nth-of-type(3) {
+		padding-top: 1.7vw;
+	}
+}
+
+@media (max-width: 1000px) {
+	#city div:nth-of-type(2) section {
+		width: 9.5vw;
+		height: 5.5vw;
+		margin: 0.5vw 1vw 0 1vw;
+	}
+}
+
+@media (max-height: 600px) {
+	footer section {
+		padding-top: -2vw;
+		line-height: 0.2vw;
+	}
+}
+
+.container {
+	background-color: #EDF5F9;
+}
+
+.container div {
+	padding-top: 70px;
+}
+
+.container img {
+	float: left;
+	width: 70px;
+	height: 70px;
+}
+
+.container:nth-of-type(1) p {
+	font-size: 18px;
+	margin-left: 80px;
+}
+
+.container p:nth-of-type(1) {
+	font-weight: bold;
+}
+
+.container h3 {
+	color: mediumpurple;
+}
+
+#img {
+	width: 300px;
+	height: 250px;
+	border: 10px solid white;
+	border-top-left-radius: 80px;
+	border-bottom-right-radius: 80px;
+}
+
+.container:nth-of-type(2) p {
+	font-size: 18px;
+	margin-left: 15px;
+	line-height: 130%;
+}
+
+.devide {
+	width: 100%;
+	height: 40px;
+	background-color: white;
+}
+
+.container p {
+	font-size: 18px;
+	margin-left: 75px;
+}
+
+#know p {
+	margin: 0;
+	font-weight: normal;
+	font-size: 16px;
+}
+
+.temptips {
+	color: mediumpurple;
+}
+
+#img {
+	float: right;
+}
+
+p {
+    margin: 0 0 19px;
+}

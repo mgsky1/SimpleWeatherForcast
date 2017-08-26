@@ -1,0 +1,31 @@
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>天气预报</title>
+		<script src="js/jquery-1.4.4.min.js"></script>
+		<script src="js/jquery.cookie.js"></script>
+		<script src="js/getWeatherInfo.js"></script>
+		<script src="http://api.map.baidu.com/api?v=2.0&ak=BRfhvF75v6LGg7cQ7FCIctHMwr4Ckk3p" type="text/javascript"></script>
+		<script>
+			getWeatherInfo();
+		</script>
+		<link rel="stylesheet" href="css/index.css" />
+	</head>
+
+	<body>
+		<div class="a">
+			<h1>正在确定您的位置</h1>
+		</div>
+		<div class="sk-wave">
+			<div class="sk-rect sk-rect1"></div>
+			<div class="sk-rect sk-rect2"></div>
+			<div class="sk-rect sk-rect3"></div>
+			<div class="sk-rect sk-rect4"></div>
+			<div class="sk-rect sk-rect5"></div>
+			<div class="sk-rect sk-rect6"></div>
+		</div>
+		<img src="images/earth.png" alt="" class="pic">
+	</body>
+
+</html>
