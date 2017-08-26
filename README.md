@@ -11,6 +11,7 @@
 - HTML5
 - CSS3
 - JQuery
+- BootStrap
 - PHP+MySQL
 ## 截图
 ![](http://xxx.fishc.com/album/201708/26/225858oelch7zsucqmvelg.png)
